@@ -33,10 +33,9 @@ export async function registerUsers(
   let person = await collection.findOne({ email: firstMightyUser.email });
 
   if (person) {
-    const checkpass = await bcrypt.compare("mideMighty001", person.password);
     return {
       status: 400,
-      body: `Account already exist, please log in with ${checkpass}, ${person.password}`,
+      body: `Account already exist, please log in with ${person.email}`,
     };
   } else {
     const hashPassword = await bcrypt.hash(
