@@ -1,34 +1,21 @@
 import { v4 as uuidv4 } from "uuid";
-const moment = require("moment");
+import moment = require("moment");
 
 const normalUUid = uuidv4();
 
-export const firstMightyUser = {
+export const userRegistrationStructure = {
   _id: normalUUid,
   userId: normalUUid,
-  firstname: "Olamide",
-  lastname: "Faniyan",
-  phoneNo: "07533925563",
-  email: "faniyano@gmail.com",
+  firstname: "",
+  lastname: "",
+  phoneNo: "",
+  email: "",
   emailVerification: false,
   signUpDate: moment().format(),
   lastActive: moment().format(),
-  password: "mideMighty001%",
-  preferences: [
-    {
-      _id: uuidv4(),
-      theme: "dark",
-    },
-  ],
-  subscriptionPlan: {
-    subscriptionId: uuidv4(),
-    planName: "Premium",
-    tokenAllowance: 5000,
-    botsAllowed: 5,
-    startDate: moment().format(),
-    EndDate: moment().add(1, "months").format(),
-    tokenUsed: 1000,
-  },
+  password: "",
+  preferences: [],
+  subscriptionPlan: {},
   bots: [
     {
       _id: uuidv4(),
@@ -37,3 +24,5 @@ export const firstMightyUser = {
     },
   ],
 };
+
+// EndDate: moment().add(1, "months").format(),

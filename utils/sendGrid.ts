@@ -1,3 +1,5 @@
+import { ApiUrl } from "./constants";
+
 export const verifyEmail = (
   firstName: string,
   userEmail: string,
@@ -12,7 +14,7 @@ export const verifyEmail = (
         to: `${userEmail}`,
         dynamic_template_data: {
           firstName: `${firstName}`,
-          buttonUrl: `http://localhost:7071/api/user/verifyEmail?token=${emailVerificationToken}`,
+          buttonUrl: `${ApiUrl}user/verifyEmail?token=${emailVerificationToken}`,
         },
       },
     ],

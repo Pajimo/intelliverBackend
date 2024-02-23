@@ -12,14 +12,20 @@
   },
   "dependencies": {
     "@azure/functions": "^4.0.0",
+    "@azure/storage-blob": "^12.17.0",
     "@sendgrid/mail": "^8.1.1",
+    "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.2",
+    "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
     "mongodb": "^6.3.0",
+    "openai": "^4.28.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^18.x",
     "rimraf": "^5.0.0",
     "typescript": "^4.0.0"

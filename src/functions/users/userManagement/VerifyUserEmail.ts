@@ -5,7 +5,8 @@ import {
   InvocationContext,
 } from "@azure/functions";
 import { connectToUserDatabase } from "../../../../utils/database";
-const moment = require("moment");
+import moment = require("moment");
+import { redirectUrl } from "../../../../utils/constants";
 
 export async function VerifyUserEmail(
   request: HttpRequest,
@@ -51,7 +52,14 @@ export async function VerifyUserEmail(
     { $unset: { verificationToken: "", tokenExpiration: "" } }
   );
 
-  return { body: `Email for ${person.firstname} verified!` };
+  return {
+    status: 301,
+    body: `Email for ${person.firstName} verified!`,
+    headers: {
+      // Set the Location header to the redirect destination
+      Location: redirectUrl,
+    },
+  };
 }
 
 app.http("VerifyUserEmail", {
